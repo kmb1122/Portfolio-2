@@ -6,15 +6,26 @@
     <title>Kim Bowles</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/2d9d17d61c.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "cYMCtYadw1AaV-lFw",
+            });
+        })();
+    </script>
 </head>
 <body>
-    <section id="landing-page">
+    <section id="landing-page" onmousemove="moveBackground(event)">
         <nav>
             <figure>
                 <img id="personal-logo" src="./P2assets/KB-logo.png" alt="KB logo">
             </figure>
             <ul class="nav__link--list">
-                <li class="nav__link">
+                <li class="nav__link" onclick="toggleModal()">
                     <a href="#" class="
                     nav__link--anchor
                     link__hover-effect
@@ -22,20 +33,20 @@
                     >About</a>
                 </li>
                 <li class="nav__link">
-                    <a href="#" class="
+                    <a href="#projects" class="
                     nav__link--anchor
                     link__hover-effect
                     link__hover-effect--black"
-                    >Project</a>
+                    >Projects</a>
                 </li>
-                <li class="nav__link">
+                <li class="nav__link" onclick="toggleModal()">
                     <a href="#" class="
                     nav__link--anchor
                     link__hover-effect
                     link__hover-effect--black"
                     >Contact</a>
                 </li>
-                <li class="nav__link click">
+                <li class="nav__link click" onclick="toggleContrast()">
                     <a href="#" class="
                     nav__link--anchor
                     link__hover-effect
@@ -46,14 +57,14 @@
         </nav>
         <header class="header">
             <div class="header__content">
-                <h1 class="title">Hey</h1>
-                <h1 class="title teal">I'm Kim.</h1>
+                <h1 class="title">Hi,</h1>
+                <h1 class="title teal">I'm Kim!</h1>
                 <p class="header__para">
                     I'm a <b class="teal">Frontend Software Engineer</b> with a passion for 
                     problem-solving and creating websites that positively 
                     impact users.
                     <br>
-                    Here is a bit more <b class="teal">about me.</b>
+                    Here is a bit more <b class="teal click" onclick="toggleModal()">about me.</b>
                     </br>
                 </p>
                 <div class="social__list">
@@ -69,13 +80,81 @@
                 </div>
             </div>
         </header>
-        <button class="mail__btn click">
+        <button class="mail__btn click" onclick="toggleModal()">
             <i class="fa-solid fa-envelope"></i>
         </button>
         <a href="#projects" class="scroll">
             <div class="scroll__icon click">
             </div>
         </a>
+        <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title modal__title--about">Here is a bit about me.</h3>
+                <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Engineer</h4>
+                <p class="modal__para">
+                    I am a 25 year-old <b class="teal">frontend software developer</b> who has love for <b class="teal">problem-solving.</b>
+                </p>
+                <p class="modal__para">
+                    As a former teacher, my <b class="teal">collaberation</b>, <b class="teal">communication</b>, and <b class="teal">organization</b> skills are top notch.
+                </p>
+                <p class="modal__para">
+                    As a runner I understand that it takes <b class="teal">commitment</b> and <b class="teal">determination</b> to reach tough goals.
+                </p>
+                <div class="modal__languages">
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-512/free-html-logo-icon-svg-download-png-2284975.png?f=webp&w=512" alt="HTML">
+                        <span class="language__name">HTML</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt="CSS">
+                        <span class="language__name">CSS</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png" alt="JS">
+                        <span class="language__name">JavaScript</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png" alt="React">
+                        <span class="language__name">React</span>
+                    </figure>
+                </div>
+            </div>
+            <div class="modal__half modal__contact">
+                <h3 class="modal__title modal__title--contact">Let's have a chat!</h3>
+                <h4 class="modal__sub-title modal__sub-title--contact">I am currently open to new opportunities!</h4>
+                <form id="contact__form" onsubmit="contact(event)">
+                    <div class="form__item">
+                        <label class="form__item--label">Name</label>
+                        <input class="input" name="user_name" type="text" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Email</label>
+                        <input class="input" name="user_email" type="email" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Message</label>
+                        <textarea class="input" name="message" type="text" required></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit">Send it my way!</button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    Thank you for the message! I look forward to speaking with you soon!
+                </div>
+                <i class="fa-solid fa-xmark modal__exit click" onclick="toggleModal()"></i>
+            </div>
+        </div>
+        <i class="fa-regular fa-moon shape shape__0"></i>
+        <i class="fa-regular fa-circle shape shape__1"></i>
+        <i class="fa-regular fa-square shape shape__2"></i>
+        <i class="fa-regular fa-circle shape shape__3"></i>
+        <i class="fa-solid fa-circle-nodes shape shape__4"></i>
+        <i class="fa-regular fa-circle shape shape__5"></i>
+        <i class="fa-regular fa-square shape shape__6"></i>
+        <i class="fa-regular fa-circle shape shape__7"></i>
+        <i class="fa-regular fa-moon shape shape__8"></i>
     </section>
     <section id="projects">
         <div class="container">
@@ -85,6 +164,29 @@
                 </h1>
                 <ul class="project__list">
                     <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./P2assets/Project-Treact.png" alt="Treact Project" class="project__img">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Treact Website
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    HTML, CSS, JavaScript
+                                </h4>
+                                <p class="project__description--para">
+                                    Showcasing different features of a fluid website including a hamburger menu for smaller screens.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/kmb1122/Treact-Module3FinalProject" target="blank" class="project__description--link">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                    <a href="https://kmb1122.github.io/Treact-Module3FinalProject/" target="blank" class="project__description--link">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                         <div class="project__wrapper">
                             <img src="" alt="" class="project__img">
                             <div class="project__wrapper--bg"></div>
@@ -99,10 +201,10 @@
                                     A brief description of the project and its features.
                                 </p>
                                 <div class="project__description--links">
-                                    <a href="#" class="project__description--link">
+                                    <a href="#" target="blank" class="project__description--link">
                                         <i class="fa-brands fa-github"></i>
                                     </a>
-                                    <a href="#" class="project__description--link">
+                                    <a href="#" target="blank" class="project__description--link">
                                         <i class="fas fa-link"></i>
                                     </a>
                                 </div>
@@ -121,23 +223,23 @@
                 </figure>
                 <div class="footer__social--list">
                     <a href="#" class="footer__social--link
-                    liver__hover-effect
-                    liver__hover-effect--white">
+                    link__hover-effect
+                    link__hover-effect--white">
                         GitHub
                     </a>
                     <a href="#" class="footer__social--link
-                    liver__hover-effect
-                    liver__hover-effect--white">
+                    link__hover-effect
+                    link__hover-effect--white">
                         LinkedIn
                     </a>
-                    <a href="#" class="footer__social--link
-                    liver__hover-effect
-                    liver__hover-effect--white">
+                    <a href="" class="footer__social--link
+                    link__hover-effect
+                    link__hover-effect--white" onclick="toggleModal()">
                         Contact
                     </a>
                     <a href="#" class="footer__social--link
-                    liver__hover-effect
-                    liver__hover-effect--white">
+                    link__hover-effect
+                    link__hover-effect--white">
                         Resume
                     </a>
                 </div>
