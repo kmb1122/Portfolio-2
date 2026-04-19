@@ -48,12 +48,46 @@
                 </li>
                 <li class="nav__link click" onclick="toggleContrast()">
                     <a href="#" class="
-                    nav__link--anchor
-                    link__hover-effect
-                    link__hover-effect--black"
+                    nav__link--anchor"
                     ><i class="fa-solid fa-circle-half-stroke"></i></a>
                 </li>
             </ul>
+            <button class="btn__menu click" onclick="openMenu()">
+                    <i class="fas fa-bars"></i>
+            </button>
+            <div class="menu__backdrop">
+                <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+                    <i class="fa-solid fa-xmark menu__xmark click"></i>
+                </button>
+                <ul class="menu__links">
+                    <li class="menu__link" onclick="toggleModal()">
+                        <a href="#" class="
+                        menu__link--anchor
+                        link__hover-effect
+                        link__hover-effect--black"
+                        >About</a>
+                    </li>
+                    <li class="menu__link">
+                        <a href="#projects" class="
+                        menu__link--anchor
+                        link__hover-effect
+                        link__hover-effect--black"
+                        >Projects</a>
+                    </li>
+                    <li class="menu__link" onclick="toggleModal()">
+                        <a href="#" class="
+                        menu__link--anchor
+                        link__hover-effect
+                        link__hover-effect--black"
+                        >Contact</a>
+                    </li>
+                    <li class="menu__link click" onclick="toggleContrast()">
+                        <a href="#" class="
+                        menu__link--anchor"
+                        ><i class="fa-solid fa-circle-half-stroke"></i></a>
+                    </li>
+                </ul>
+            </div>
         </nav>
         <header class="header">
             <div class="header__content">
@@ -71,7 +105,7 @@
                     <a href="https://github.com/kmb1122" target="_blank" class="social__link click">
                         <i class="fa-brands fa-github"></i>
                     </a>
-                    <a href="mailto:sivlerspave1850@gmail.com" target="_blank" class="social__link click">
+                    <a target="_blank" class="social__link click" onclick="toggleModal()">
                         <i class="fa-regular fa-envelope"></i>
                     </a>
                     <a href="" target="_blank" class="social__link click">
@@ -92,7 +126,7 @@
                 <h3 class="modal__title modal__title--about">Here is a bit about me.</h3>
                 <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Engineer</h4>
                 <p class="modal__para">
-                    I am a 25 year-old <b class="teal">frontend software developer</b> who has love for <b class="teal">problem-solving.</b>
+                    I am a 25 year-old <b class="teal">frontend software engineer</b> who has a love for <b class="teal">problem-solving.</b>
                 </p>
                 <p class="modal__para">
                     As a former teacher, my <b class="teal">collaberation</b>, <b class="teal">communication</b>, and <b class="teal">organization</b> skills are top notch.
@@ -219,7 +253,7 @@
         <div class="container">
             <div class="row footer__row">
                 <figure>
-                    <img class="footer__logo--img" src="./P2assets/KB-logo.png" alt="KB logo">
+                    <img class="footer__img" src="./P2assets/SerenityTongue.jpg" alt="Cat">
                 </figure>
                 <div class="footer__social--list">
                     <a href="#" class="footer__social--link
