@@ -562,6 +562,10 @@ nav {
     margin-bottom: 60px;
 }
 
+.project {
+    margin-bottom: 80px;
+}
+
 .project__img {
     width: 100%;
     transition: all 600ms ease;
@@ -575,7 +579,7 @@ nav {
 .project__wrapper {
     position: relative;
     border-radius: 20px;
-    box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.45);
+    box-shadow: 0 20px 70px 0 rgb(0, 0, 0, 0.45);
     overflow: hidden;
 }
 

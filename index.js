@@ -58,10 +58,23 @@ function contact(event) {
 }
 
 function toggleModal() {
+    // Togal modal state
     if (isModalOpen) {
         isModalOpen = false;
         return document.body.classList.remove("modal__open");
     }
     isModalOpen = true;
-    document.body.classList += " modal__open";
+    document.body.classList += " modal__open"; 
+
+    // Scroll to landing page
+    const landing = document.getElementById("landing-page");
+    if (!landing) return;
+
+    const landingTop = landing.offsetTop;
+    const currentScroll = window.scrollY;
+
+    //Only scroll if landing page is not in view
+    if (Math.abs(currentScroll - landingTop) > 5) {
+        window.scrollTo({ top: landingTop, behavior: "smooth" });
+    }
 }
