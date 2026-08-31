@@ -6,7 +6,7 @@ let contrastToggle = false;
 const scaleFactor = 1 / 20;
 
 function openMenu () {
-    document.body.classList += " menu--open"
+    document.body.classList.add("menu--open");
 } 
 
 function closeMenu () {
@@ -28,7 +28,7 @@ function moveBackground(event) {
 function toggleContrast() {
     contrastToggle = !contrastToggle;
     if (contrastToggle) {
-        document.body.classList += " dark-theme";    
+        document.body.classList.add("dark-theme");   
     }
     else {
         document.body.classList.remove ("dark-theme");
@@ -39,7 +39,7 @@ function contact(event) {
     event.preventDefault();
     const loading = document.querySelector('.modal__overlay--loading');
     const success = document.querySelector('.modal__overlay--success');
-    loading.classList += " modal__overlay--visible";
+    loading.classList.add("modal__overlay--visible");
     emailjs
         .sendForm(
             'service_mbp1cxn',
@@ -48,7 +48,7 @@ function contact(event) {
             'cYMCtYadw1AaV-lFw'
         ).then(() => {
             loading.classList.remove("modal__overlay--visible")
-            success.classList += " modal__overlay--visible"
+            success.classList.add("modal__overlay--visible");
         }).catch(() => {
             loading.classList.remove("modal__overlay--visible");
             alert(
@@ -64,7 +64,7 @@ function toggleModal() {
         return document.body.classList.remove("modal__open");
     }
     isModalOpen = true;
-    document.body.classList += " modal__open"; 
+    document.body.classList.add("modal__open");
 
     // Scroll to landing page
     const landing = document.getElementById("landing-page");

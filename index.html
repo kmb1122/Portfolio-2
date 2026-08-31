@@ -21,72 +21,75 @@
 <body>
     <section id="landing-page" onmousemove="moveBackground(event)">
         <nav>
-            <figure>
-                <img id="personal-logo" src="./P2assets/KB-logo.png" alt="KB logo">
-            </figure>
-            <ul class="nav__link--list">
-                <li class="nav__link" onclick="toggleModal()">
-                    <a href="#" class="
-                    nav__link--anchor
-                    link__hover-effect
-                    link__hover-effect--black"
-                    >About</a>
-                </li>
-                <li class="nav__link">
-                    <a href="#projects" class="
-                    nav__link--anchor
-                    link__hover-effect
-                    link__hover-effect--black"
-                    >Projects</a>
-                </li>
-                <li class="nav__link" onclick="toggleModal()">
-                    <a href="#" class="
-                    nav__link--anchor
-                    link__hover-effect
-                    link__hover-effect--black"
-                    >Contact</a>
-                </li>
-                <li class="nav__link click" onclick="toggleContrast()">
-                    <a href="#" class="
-                    nav__link--anchor"
-                    ><i class="fa-solid fa-circle-half-stroke"></i></a>
-                </li>
-            </ul>
-            <button class="btn__menu click" onclick="openMenu()">
-                    <i class="fas fa-bars"></i>
-            </button>
-            <div class="menu__backdrop">
-                <button class="btn__menu btn__menu--close" onclick="closeMenu()">
-                    <i class="fa-solid fa-xmark menu__xmark click"></i>
-                </button>
-                <ul class="menu__links">
-                    <li class="menu__link" onclick="toggleModal()">
+            <div class="nav__container">
+                <figure class="name__wrapper">
+                    <img id="personal-logo" src="./P2assets/KB-logo.png" alt="KB logo">
+                    <p class="name">Kim Bowles</p>
+                </figure>
+                <ul class="nav__link--list">
+                    <li class="nav__link" onclick="toggleModal()">
                         <a href="#" class="
-                        menu__link--anchor
+                        nav__link--anchor
                         link__hover-effect
                         link__hover-effect--black"
                         >About</a>
                     </li>
-                    <li class="menu__link">
+                    <li class="nav__link">
                         <a href="#projects" class="
-                        menu__link--anchor
+                        nav__link--anchor
                         link__hover-effect
                         link__hover-effect--black"
                         >Projects</a>
                     </li>
-                    <li class="menu__link" onclick="toggleModal()">
+                    <li class="nav__link" onclick="toggleModal()">
                         <a href="#" class="
-                        menu__link--anchor
+                        nav__link--anchor
                         link__hover-effect
                         link__hover-effect--black"
                         >Contact</a>
                     </li>
-                    <li class="menu__link click" onclick="toggleContrast()">
+                    <li class="nav__link click" onclick="toggleContrast()">
                         <a href="#" class="
-                        menu__link--anchor"
+                        nav__link--anchor"
                         ><i class="fa-solid fa-circle-half-stroke"></i></a>
                     </li>
                 </ul>
+                <button class="btn__menu click" onclick="openMenu()">
+                        <i class="fas fa-bars"></i>
+                </button>
+                <div class="menu__backdrop">
+                    <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+                        <i class="fa-solid fa-xmark menu__xmark click"></i>
+                    </button>
+                    <ul class="menu__links">
+                        <li class="menu__link" onclick="toggleModal()">
+                            <a href="#" class="
+                            menu__link--anchor
+                            link__hover-effect
+                            link__hover-effect--black"
+                            >About</a>
+                        </li>
+                        <li class="menu__link">
+                            <a href="#projects" class="
+                            menu__link--anchor
+                            link__hover-effect
+                            link__hover-effect--black"
+                            >Projects</a>
+                        </li>
+                        <li class="menu__link" onclick="toggleModal()">
+                            <a href="#" class="
+                            menu__link--anchor
+                            link__hover-effect
+                            link__hover-effect--black"
+                            >Contact</a>
+                        </li>
+                        <li class="menu__link click" onclick="toggleContrast()">
+                            <a href="#" class="
+                            menu__link--anchor"
+                            ><i class="fa-solid fa-circle-half-stroke"></i></a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
         <header class="header">
@@ -98,18 +101,21 @@
                     problem-solving and creating websites that positively 
                     impact users.
                     <br>
-                    Here is a bit more <b class="teal click" onclick="toggleModal()">about me.</b>
+                    Here is a bit more <b class="teal click link__hover-effect link__hover-effect--teal" onclick="toggleModal()">about me.</b>
                     </br>
                 </p>
                 <div class="social__list">
                     <a href="https://github.com/kmb1122" target="_blank" class="social__link click">
-                        <i class="fa-brands fa-github"></i>
+                        <i class="fa-brands fa-github social__icon"></i>
+                        <p>GitHub</p>
                     </a>
                     <a target="_blank" class="social__link click" onclick="toggleModal()">
-                        <i class="fa-regular fa-envelope"></i>
+                        <i class="fa-regular fa-envelope social__icon"></i>
+                        <p>Email</p>
                     </a>
                     <a href="" target="_blank" class="social__link click">
-                        <i class="fa-regular fa-file-pdf"></i>
+                        <i class="fa-regular fa-file-pdf social__icon"></i>
+                        <p>Resume</p>
                     </a>
                 </div>
             </div>
@@ -155,6 +161,18 @@
                         <img class="modal__language--img" src="/P2assets/Firestore.png" alt="Cloud Firestore">
                         <span class="language__name">Cloud Firestore</span>
                     </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="/P2assets/typescript.ico" alt="TypeScript">
+                        <span class="language__name">TypeScript</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="/P2assets/nextjs-icon.png" alt="Next.js">
+                        <span class="language__name">Next.js</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="/P2assets/nodejs.svg" alt="Next.js">
+                        <span class="language__name">Node.js</span>
+                    </figure>
                 </div>
             </div>
             <div class="modal__half modal__contact">
@@ -198,12 +216,12 @@
         <div class="container">
             <div class="row">
                 <h1 class="section__title">
-                    Here are some of my <span class="teal">projects.</span>
+                    <span class="teal title__thin">Featured Work</span> Projects
                 </h1>
                 <ul class="project__list">
                     <li class="project">
                         <div class="project__wrapper">
-                            <img src="./P2assets/Project-Treact.png" alt="Treact Project" class="project__img">
+                            <img src="./P2assets/Treact.png" alt="Treact Project" class="project__img">
                             <div class="project__wrapper--bg"></div>
                             <div class="project__description">
                                 <h3 class="project__description--title">
@@ -244,7 +262,57 @@
                                     <a href="https://github.com/kmb1122/Library-React-Project" target="blank" class="project__description--link">
                                         <i class="fa-brands fa-github"></i>
                                     </a>
-                                    <a href="https://kmb1122.github.io/Library-React-Project/" target="blank" class="project__description--link">
+                                    <a href="hhttps://kmb1122.github.io/" target="blank" class="project__description--link">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./P2assets/FES-Internship.png" alt="" class="project__img">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Internship with FES
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    HTML, CSS, JavaScript, React, Node
+                                </h4>
+                                <p class="project__description--para">
+                                    A project to show off carousels, loading states, and navigation.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/kmb1122/kim-internship" target="blank" class="project__description--link">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                    <a href="https://kim-internship-phi.vercel.app/" target="blank" class="project__description--link">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./P2assets/Summarist-Internship.png" alt="" class="project__img">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Summarist-Internship
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    HTML, CSS, TypeScript, React, Next.js, Firestore
+                                </h4>
+                                <p class="project__description--para">
+                                    Showcases using Firebase Authentication, Firestore, an audio player, and Stripe payment system.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/kmb1122/Summarist-Internship" target="blank" class="project__description--link">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                    <a href="https://summarist-internship-kohl.vercel.app/" target="blank" class="project__description--link">
                                         <i class="fas fa-link"></i>
                                     </a>
                                 </div>
@@ -281,36 +349,31 @@
         </div>
     </section>
     <footer>
-        <div class="container">
-            <div class="row footer__row">
+        <div class="row footer__row">
+            <div class="footer__wrap">
                 <figure>
                     <img class="footer__img" src="./P2assets/SerenityTongue.jpg" alt="Cat">
                 </figure>
-                <div class="footer__social--list">
-                    <a href="#" class="footer__social--link
-                    link__hover-effect
-                    link__hover-effect--white">
-                        GitHub
-                    </a>
-                    <a href="#" class="footer__social--link
-                    link__hover-effect
-                    link__hover-effect--white">
-                        LinkedIn
-                    </a>
-                    <a href="" class="footer__social--link
-                    link__hover-effect
-                    link__hover-effect--white" onclick="toggleModal()">
-                        Contact
-                    </a>
-                    <a href="#" class="footer__social--link
-                    link__hover-effect
-                    link__hover-effect--white">
-                        Resume
-                    </a>
-                </div>
                 <div class="footer__copyright">
-                    Copyright © 2026
+                    © 2026 Kim Bowles.
                 </div>
+            </div>
+            <div class="footer__social--list">
+                <a href="https://github.com/kmb1122" class="footer__social--link
+                link__hover-effect
+                link__hover-effect--black">
+                    GitHub
+                </a>
+                <a href="" class="footer__social--link
+                link__hover-effect
+                link__hover-effect--black" onclick="toggleModal()">
+                    Contact
+                </a>
+                <a href="#" class="footer__social--link
+                link__hover-effect
+                link__hover-effect--black">
+                    Resume
+                </a>
             </div>
         </div>
     </footer>
