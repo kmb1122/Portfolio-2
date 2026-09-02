@@ -145,10 +145,6 @@ nav {
   opacity: 1;
   visibility: visible;
   transition: all 600ms 700ms;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: space-between;
 }
 
 .portrait__container {
@@ -346,6 +342,9 @@ nav {
   width: 100%;
   max-width: 1000px;
   padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header__para {
@@ -394,7 +393,7 @@ nav {
 
 .scroll {
   position: absolute;
-  bottom: 20px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -694,11 +693,23 @@ nav {
   margin-top: 8px;
 }
 
+.project__description--links {
+  display: flex;
+  gap: 24px;
+}
+
 .project__description--link {
+  background-color: grey;
   color: white;
+  padding: 4px 12px;
   font-size: 20px;
-  margin-right: 16px;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border: 2px solid rgb(180, 178, 178);
+  border-radius: 999px;
+  opacity: 0.7;
   transform-origin: center;
   transition: transform 300ms ease;
 }
@@ -845,6 +856,10 @@ footer {
   .portrait {
     transform: scale(0.8);
     transform-origin: bottom center;
+  }
+
+  .scroll {
+    bottom: 10px;
   }
 
   .project__description {
