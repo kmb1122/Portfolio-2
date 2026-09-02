@@ -473,40 +473,6 @@ nav {
   transform: translateX(-110%);
 }
 
-.modal__languages {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.modal__language {
-  width: 25%;
-  padding: 16px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.modal__language:hover .language__name {
-  transform: scale(1);
-}
-
-.modal__language:hover {
-  filter: brightness(80%);
-  transform: scale(0.9);
-}
-
-.language__name {
-  position: absolute;
-  bottom: -10px;
-  transform: scale(0);
-  transition: all 300ms ease;
-}
-
-.modal__language--img {
-  width: 100%;
-}
-
 .modal__contact {
   background-color: #242424;
   color: white;
@@ -605,6 +571,23 @@ nav {
   color: white;
   font-size: 32px;
   z-index: 100;
+}
+
+/* Skills */
+#skills {
+  background: linear-gradient(135deg, rgb(180, 180, 180), rgb(90, 90, 90));
+}
+
+.skills__list {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.skill {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 16px;
 }
 
 /* Projects */
