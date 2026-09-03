@@ -334,16 +334,16 @@ nav {
 /* Landing Page */
 #landing-page {
   min-height: 100vh;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 100%;
   max-width: 1000px;
-  padding: 0 30px;
+  padding: 80px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -841,18 +841,18 @@ footer {
 @media (max-width: 950px) {
   .header {
     flex-direction: column-reverse;
+    padding: 60px 30px;
   }
 
   .portrait__container {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    height: 320px;
+    align-items: center;
+    height: 300px;
   }
 
   .portrait {
     transform: scale(0.8);
-    transform-origin: bottom center;
   }
 
   .scroll {
@@ -869,11 +869,6 @@ footer {
 }
 
 @media (max-width: 780px) {
-  .portrait {
-    transform: scale(0.7);
-    transform-origin: bottom center;
-  }
-
   .modal__half {
     padding: 16px;
   }
@@ -919,7 +914,7 @@ footer {
 
 @media (max-width: 480px) {
   .portrait__container {
-    height: 216px;
+    height: 220px;
   }
 
   .portrait {

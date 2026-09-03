@@ -19,86 +19,86 @@
     </script>
 </head>
 <body>
-    <section id="landing-page" onmousemove="moveBackground(event)">
-        <nav>
-            <div class="nav__container">
-                <figure class="name__wrapper">
-                    <img id="personal-logo" src="./P2assets/KB-logo.png" alt="KB logo">
-                    <p class="name">Kim Bowles</p>
-                </figure>
-                <ul class="nav__link--list">
-                    <li class="nav__link" onclick="toggleModal()">
+    <nav>
+        <div class="nav__container">
+            <figure class="name__wrapper">
+                <img id="personal-logo" src="./P2assets/KB-logo.png" alt="KB logo">
+                <p class="name">Kim Bowles</p>
+            </figure>
+            <ul class="nav__link--list">
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black"
+                    >About</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#skills" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black"
+                    >Skills</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#projects" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black"
+                    >Projects</a>
+                </li>
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black"
+                    >Contact</a>
+                </li>
+                <li class="nav__link click" onclick="toggleContrast()">
+                    <a href="#" class="
+                    nav__link--anchor"
+                    ><i class="fa-solid fa-circle-half-stroke"></i></a>
+                </li>
+            </ul>
+            <button class="btn__menu click" onclick="openMenu()">
+                    <i class="fas fa-bars"></i>
+            </button>
+            <div class="menu__backdrop">
+                <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+                    <i class="fa-solid fa-xmark menu__xmark click"></i>
+                </button>
+                <ul class="menu__links">
+                    <li class="menu__link" onclick="toggleModal()">
                         <a href="#" class="
-                        nav__link--anchor
+                        menu__link--anchor
                         link__hover-effect
                         link__hover-effect--black"
                         >About</a>
                     </li>
-                    <li class="nav__link">
-                        <a href="#skills" class="
-                        nav__link--anchor
-                        link__hover-effect
-                        link__hover-effect--black"
-                        >Skills</a>
-                    </li>
-                    <li class="nav__link">
+                    <li class="menu__link">
                         <a href="#projects" class="
-                        nav__link--anchor
+                        menu__link--anchor
                         link__hover-effect
                         link__hover-effect--black"
                         >Projects</a>
                     </li>
-                    <li class="nav__link" onclick="toggleModal()">
+                    <li class="menu__link" onclick="toggleModal()">
                         <a href="#" class="
-                        nav__link--anchor
+                        menu__link--anchor
                         link__hover-effect
                         link__hover-effect--black"
                         >Contact</a>
                     </li>
-                    <li class="nav__link click" onclick="toggleContrast()">
+                    <li class="menu__link click" onclick="toggleContrast()">
                         <a href="#" class="
-                        nav__link--anchor"
+                        menu__link--anchor"
                         ><i class="fa-solid fa-circle-half-stroke"></i></a>
                     </li>
                 </ul>
-                <button class="btn__menu click" onclick="openMenu()">
-                        <i class="fas fa-bars"></i>
-                </button>
-                <div class="menu__backdrop">
-                    <button class="btn__menu btn__menu--close" onclick="closeMenu()">
-                        <i class="fa-solid fa-xmark menu__xmark click"></i>
-                    </button>
-                    <ul class="menu__links">
-                        <li class="menu__link" onclick="toggleModal()">
-                            <a href="#" class="
-                            menu__link--anchor
-                            link__hover-effect
-                            link__hover-effect--black"
-                            >About</a>
-                        </li>
-                        <li class="menu__link">
-                            <a href="#projects" class="
-                            menu__link--anchor
-                            link__hover-effect
-                            link__hover-effect--black"
-                            >Projects</a>
-                        </li>
-                        <li class="menu__link" onclick="toggleModal()">
-                            <a href="#" class="
-                            menu__link--anchor
-                            link__hover-effect
-                            link__hover-effect--black"
-                            >Contact</a>
-                        </li>
-                        <li class="menu__link click" onclick="toggleContrast()">
-                            <a href="#" class="
-                            menu__link--anchor"
-                            ><i class="fa-solid fa-circle-half-stroke"></i></a>
-                        </li>
-                    </ul>
-                </div>
             </div>
-        </nav>
+        </div>
+    </nav>
+    <section id="landing-page" onmousemove="moveBackground(event)">
         <header class="header">
             <div class="header__content">
                 <h1 class="title">Hi,</h1>
