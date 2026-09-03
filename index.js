@@ -76,16 +76,6 @@ function toggleModal() {
 
 const projects = [
   {
-    image: "./P2assets/Skinstric.png",
-    imageAlt: "Skinstric Internship Project",
-    title: "Skinstric Internship",
-    technologies: "HTML, CSS, TypeScript, React, Next.js, GSAP animations",
-    description:
-      "Boast a processing time of less than 2 minutes while also showcasing CSS and GSAP animations.",
-    github: "https://github.com/kmb1122/Skinstric-Internship",
-    website: "https://skinstric-internship-peach.vercel.app/",
-  },
-  {
     image: "./P2assets/Summarist-Internship.png",
     imageAlt: "Summarist Internship Project",
     title: "Summarist Internship",
@@ -96,14 +86,14 @@ const projects = [
     website: "https://summarist-internship-kohl.vercel.app/",
   },
   {
-    image: "./P2assets/FES-Internship.png",
-    imageAlt: "FES Internship Project",
-    title: "Internship with FES",
-    technologies: "HTML, CSS, JavaScript, React, Node",
+    image: "./P2assets/Skinstric.png",
+    imageAlt: "Skinstric Internship Project",
+    title: "Skinstric Internship",
+    technologies: "HTML, CSS, TypeScript, React, Next.js, GSAP animations",
     description:
-      "A project showcasing carousels, loading states, and navigation.",
-    github: "https://github.com/kmb1122/kim-internship",
-    website: "https://kim-internship-phi.vercel.app/",
+      "Boast a processing time of less than 2 minutes while also showcasing CSS and GSAP animations.",
+    github: "https://github.com/kmb1122/Skinstric-Internship",
+    website: "https://skinstric-internship-peach.vercel.app/",
   },
   {
     image: "./P2assets/MovieSearch.png",
@@ -111,9 +101,19 @@ const projects = [
     title: "Movie Search API",
     technologies: "HTML, CSS, JavaScript, React",
     description:
-      "Fetches movies and movie data from two different API's. Showcase a loading states, CSS animations, and a sorting feature.",
+      "Fetches movie data from two different API's. Showcases loading states, CSS animations, and a sorting feature.",
     github: "https://github.com/kmb1122/MovieSearchProject",
     website: "https://kmb1122.github.io/MovieSearchProject/",
+  },
+  {
+    image: "./P2assets/FES-Internship.png",
+    imageAlt: "FES Internship Project",
+    title: "Internship with FES",
+    technologies: "HTML, CSS, JavaScript, React, Node",
+    description:
+      "A project with carousels, loading states, and dynamic routing.",
+    github: "https://github.com/kmb1122/kim-internship",
+    website: "https://kim-internship-phi.vercel.app/",
   },
   {
     image: "./P2assets/Project-Library.png",
@@ -121,7 +121,7 @@ const projects = [
     title: "Library React Project",
     technologies: "HTML, CSS, JavaScript, React",
     description:
-      "This project was built using Create React App. It showcases navigating different webpages, sorting, and cart functionality.",
+      "This project was built using Create React App. It showcases dynamic routing, a sorting feature, and a cart functionality.",
     github: "https://github.com/kmb1122/Library-React-Project",
     website: "https://library-react-project-xi.vercel.app/",
   },
@@ -189,7 +189,7 @@ function renderProjects() {
                                 aria-label="View ${project.title} on GitHub"
                             >
                                 <i class="fa-brands fa-github"></i>
-                                <p>GitHib</p>
+                                <p>GitHub</p>
                             </a>
 
                             <a

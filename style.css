@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  cursor: default;
 }
 
 html {
@@ -45,6 +46,7 @@ textarea {
   border-right: none;
   height: 40px;
   transition: all 300ms ease;
+  cursor: text;
 }
 
 textarea {
@@ -757,7 +759,7 @@ footer {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-right: 12px;
+  margin-right: 24px;
 }
 
 .footer__social--link {
@@ -854,7 +856,7 @@ footer {
   }
 
   .scroll {
-    bottom: 10px;
+    display: none;
   }
 
   .project__description {
@@ -867,6 +869,11 @@ footer {
 }
 
 @media (max-width: 780px) {
+  .portrait {
+    transform: scale(0.7);
+    transform-origin: bottom center;
+  }
+
   .modal__half {
     padding: 16px;
   }
