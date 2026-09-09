@@ -617,57 +617,33 @@ nav {
 }
 
 .project__img {
-  width: 100%;
-  transition: all 600ms ease;
-}
-
-.project:hover .project__imj {
-  transform: scale(1.07);
-  filter: blur(5px);
+  width: 92%;
+  margin: 24px 16px auto;
+  display: block;
+  border-radius: 8px;
 }
 
 .project__wrapper {
-  position: relative;
   border-radius: 20px;
   overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(60, 140, 120, 0.849),
+    rgba(103, 193, 169, 0.849)
+  );
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
-}
-
-.project__wrapper:hover .project__description {
-  opacity: 1;
-  transform: translateY(-50%);
-}
-
-.project__wrapper:hover .project__img {
-  transform: scale(1.07);
-  filter: blur(5px);
-}
-
-.project__wrapper:hover .project__wrapper--bg {
-  opacity: 0.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .project__description {
-  position: absolute;
-  top: 48%;
-  left: 48px;
-  transform: translateY(-50%);
-  opacity: 0;
-  transition:
-    opacity 300ms,
-    transform 450ms ease;
+  padding: 24px;
   color: white;
-  max-width: 550px;
 }
 
 .project__wrapper--bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #1c1d25;
-  opacity: 0.2;
+  display: none;
 }
 
 .project__description--title {
@@ -684,7 +660,7 @@ nav {
 }
 
 .project__description--link {
-  background-color: grey;
+  background: linear-gradient(135deg, rgb(180, 180, 180), rgb(90, 90, 90));
   color: white;
   padding: 4px 12px;
   font-size: 20px;
@@ -692,9 +668,8 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 4px;
-  border: 2px solid rgb(180, 178, 178);
+  border: 2px solid rgb(189, 189, 189);
   border-radius: 999px;
-  opacity: 0.7;
   transform-origin: center;
   transition: transform 300ms ease;
 }
@@ -713,10 +688,10 @@ nav {
 
 .more__btn {
   color: white;
-  background: linear-gradient(135deg, rgb(60, 140, 120), rgb(103, 193, 169));
+  background: linear-gradient(135deg, rgb(180, 180, 180), rgb(90, 90, 90));
   font-size: 20px;
   font-weight: 400;
-  border: 2px solid rgb(78, 156, 135);
+  border: 2px solid rgb(189, 189, 189);
   border-radius: 4px;
   padding: 8px 16px;
   margin: 0 auto;
@@ -948,6 +923,10 @@ footer {
     flex-wrap: wrap;
   }
 
+  .project__img {
+    margin: 16px;
+  }
+
   .project__description {
     left: 8px;
   }
@@ -962,5 +941,9 @@ footer {
 
   .project__description--para {
     font-size: 12px;
+  }
+
+  .project__description--link {
+    font-size: 14px;
   }
 }
