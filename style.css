@@ -180,8 +180,6 @@ nav {
 .dark-theme .fa-bars,
 .dark-theme .menu__link--anchor,
 .dark-theme .skill__name,
-.dark-theme .project__description,
-.dark-theme .project__description--link,
 .dark-theme .more__btn,
 .dark-theme .footer__row,
 .dark-theme .footer__social--link {
@@ -199,10 +197,7 @@ nav {
   background-color: #242424;
 }
 
-.dark-theme .menu__backdrop,
-.dark-theme .project__wrapper,
-.dark-theme .project__description--link,
-.dark-theme .more__btn {
+.dark-theme .menu__backdrop {
   border: 1px solid white;
 }
 
@@ -222,6 +217,10 @@ nav {
 .dark-theme .mail__btn {
   background-color: white;
   color: #242424;
+}
+
+.dark-theme .project__wrapper {
+  box-shadow: 0 4px 12px rgba(248, 248, 248, 0.45);
 }
 
 /* Nav */
@@ -654,12 +653,11 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid black;
 }
 
 .project__description {
   padding: 24px;
-  color: black;
+  color: whitesmoke;
 }
 
 .project__wrapper--bg {
@@ -681,14 +679,14 @@ nav {
 
 .project__description--link {
   background: linear-gradient(135deg, rgb(180, 180, 180), rgb(90, 90, 90));
-  color: black;
+  color: whitesmoke;
   padding: 4px 12px;
   font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 4px;
-  border: 2px solid black;
+  border: 2px solid rgb(189, 189, 189);
   border-radius: 999px;
   transform-origin: center;
   transition: transform 300ms ease;
@@ -707,11 +705,11 @@ nav {
 }
 
 .more__btn {
-  color: black;
+  color: whitesmoke;
   background: linear-gradient(135deg, rgb(180, 180, 180), rgb(90, 90, 90));
   font-size: 20px;
   font-weight: 400;
-  border: 2px solid black;
+  border: 2px solid rgb(189, 189, 189);
   border-radius: 4px;
   padding: 8px 16px;
   margin: 0 auto;
