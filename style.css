@@ -861,6 +861,10 @@ footer {
   }
 }
 
+.modal {
+  height: 520px;
+}
+
 @media (max-width: 780px) {
   .modal__half {
     padding: 16px;
@@ -888,6 +892,17 @@ footer {
   .mail__btn {
     bottom: 80px;
     right: 24px;
+  }
+
+  .modal {
+    flex-direction: column-reverse;
+    overflow: none;
+  }
+
+  .modal__half {
+    width: 100%;
+    height: 50%;
+    overflow: auto;
   }
 
   .footer__row {
@@ -924,17 +939,6 @@ footer {
 
   .nav__link--list {
     display: none;
-  }
-
-  .modal {
-    flex-direction: column-reverse;
-    overflow: none;
-  }
-
-  .modal__half {
-    width: 100%;
-    height: 50%;
-    overflow: auto;
   }
 
   .social__list {
