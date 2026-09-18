@@ -106,16 +106,6 @@ const projects = [
     website: "https://skinstric-internship-peach.vercel.app/",
   },
   {
-    image: "./P2assets/MovieSearch.png",
-    imageAlt: "Movie Search API Project",
-    title: "Movie Search API",
-    technologies: "HTML, CSS, JavaScript, React",
-    description:
-      "Fetches movie data from two different API's. Showcases loading states, CSS animations, and a sorting feature.",
-    github: "https://github.com/kmb1122/MovieSearchProject",
-    website: "https://kmb1122.github.io/MovieSearchProject/",
-  },
-  {
     image: "./P2assets/FES-Internship.png",
     imageAlt: "FES Internship Project",
     title: "Internship with FES",
@@ -124,6 +114,16 @@ const projects = [
       "A project with carousels, loading states, and dynamic routing.",
     github: "https://github.com/kmb1122/kim-internship",
     website: "https://kim-internship-phi.vercel.app/",
+  },
+  {
+    image: "./P2assets/MovieSearch.png",
+    imageAlt: "Movie Search API Project",
+    title: "Movie Search API",
+    technologies: "HTML, CSS, JavaScript, React",
+    description:
+      "Fetches movie data from two different API's. Showcases loading states, CSS animations, and a sorting feature.",
+    github: "https://github.com/kmb1122/MovieSearchProject",
+    website: "https://kmb1122.github.io/MovieSearchProject/",
   },
   {
     image: "./P2assets/Project-Library.png",
