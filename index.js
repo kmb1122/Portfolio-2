@@ -78,10 +78,10 @@ const projects = [
   {
     image: "./P2assets/TeacherInterventionDashboard.png",
     imageAlt: "Teacher Intervention Dashboard",
-    title: "Teacher Intervention Dashboard",
+    title: "Intervention Dashboard",
     technologies: "Next.js, TypeScript, Tailwind, Vitest",
     description:
-      "A dashboard that flags students needing intervention from their assessment data. Showcasing test with Vitest.",
+      "A dashboard that flags students needing intervention from their assessment data. Showcasing a testing page with Vitest.",
     github: "https://github.com/kmb1122/Teacher-Intervention-Dashboard",
     website: "https://teacher-intervention-dashboard.vercel.app/",
   },
