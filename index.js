@@ -1,13 +1,27 @@
 let isModalOpen = false;
 let contrastToggle = false;
+let lastFocusedElement = null;
 const scaleFactor = 1 / 20;
 
 function openMenu() {
   document.body.classList.add("menu--open");
+  const menuButton = document.querySelector(
+    ".btn__menu:not(.btn__menu--close)",
+  );
+  const menu = document.querySelector(".menu__backdrop");
+  menuButton?.setAttribute("aria-expanded", "true");
+  menu?.setAttribute("aria-hidden", "false");
+  document.querySelector(".btn__menu--close")?.focus();
 }
 
 function closeMenu() {
   document.body.classList.remove("menu--open");
+  const menuButton = document.querySelector(
+    ".btn__menu:not(.btn__menu--close)",
+  );
+  const menu = document.querySelector(".menu__backdrop");
+  menuButton?.setAttribute("aria-expanded", "false");
+  menu?.setAttribute("aria-hidden", "true");
 }
 
 function moveBackground(event) {
@@ -56,12 +70,21 @@ function contact(event) {
 }
 
 function toggleModal() {
+  const modal = document.querySelector(".modal");
+
   if (isModalOpen) {
     isModalOpen = false;
-    return document.body.classList.remove("modal__open");
+    document.body.classList.remove("modal__open");
+    modal?.setAttribute("aria-hidden", "true");
+    lastFocusedElement?.focus();
+    return;
   }
   isModalOpen = true;
+  lastFocusedElement = document.activeElement;
+  closeMenu();
   document.body.classList.add("modal__open");
+  modal?.setAttribute("aria-hidden", "false");
+  modal?.querySelector("input, textarea, button")?.focus();
 
   const landing = document.getElementById("landing-page");
   if (!landing) return;
@@ -73,6 +96,32 @@ function toggleModal() {
     window.scrollTo({ top: landingTop, behavior: "smooth" });
   }
 }
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    if (isModalOpen) toggleModal();
+    else closeMenu();
+    return;
+  }
+
+  if (event.key !== "Tab" || !isModalOpen) return;
+
+  const modal = document.querySelector(".modal");
+  const focusable = modal?.querySelectorAll(
+    'button, input, textarea, a[href], [tabindex]:not([tabindex="-1"])',
+  );
+  if (!focusable?.length) return;
+
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
+});
 
 const projects = [
   {

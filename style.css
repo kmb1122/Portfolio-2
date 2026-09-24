@@ -27,6 +27,15 @@ a {
 
 button {
   cursor: pointer;
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #0b6e5b;
+  outline-offset: 3px;
 }
 
 section {
@@ -192,9 +201,12 @@ nav {
 
 .dark-theme section,
 .dark-theme .menu__backdrop,
-.dark-theme nav,
 .dark-theme footer {
   background-color: #242424;
+}
+
+.dark-theme nav {
+  background-color: #242424 !important;
 }
 
 .dark-theme .menu__backdrop {
@@ -253,6 +265,20 @@ nav {
   font-size: 16px;
   color: #242424;
   font-weight: 700;
+}
+
+.nav__link--button,
+.menu__link--button,
+.link__button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.link__button {
+  color: inherit;
+  font-weight: 700;
+  font-size: inherit;
 }
 
 .name__wrapper {
@@ -379,6 +405,7 @@ nav {
   gap: 4px;
   border-radius: 999px;
   border: 2px solid rgb(78, 156, 135);
+  font-family: inherit;
 }
 
 .social__icon {
@@ -449,6 +476,7 @@ nav {
   display: flex;
   visibility: hidden;
   z-index: -1;
+  pointer-events: none;
   transition:
     visibility 1s,
     z-index 1s,
@@ -459,6 +487,7 @@ nav {
   z-index: 60;
   box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.55);
   visibility: visible;
+  pointer-events: auto;
 }
 
 .modal__half {
@@ -579,6 +608,20 @@ nav {
   color: white;
   font-size: 32px;
   z-index: 100;
+  background: transparent;
+  border: 0;
+  padding: 8px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Skills */
@@ -757,6 +800,13 @@ footer {
 
 .footer__social--link {
   color: #242424;
+}
+
+.footer__social--button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font-weight: inherit;
 }
 
 /* Shapes */
