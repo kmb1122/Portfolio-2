@@ -170,7 +170,7 @@ nav {
   background: none;
 }
 
-.modal__open nav,
+.modal__open .nav__container,
 .modal__open .scroll,
 .modal__open .header {
   opacity: 0;
@@ -201,12 +201,9 @@ nav {
 
 .dark-theme section,
 .dark-theme .menu__backdrop,
+.dark-theme nav,
 .dark-theme footer {
   background-color: #242424;
-}
-
-.dark-theme nav {
-  background-color: #242424 !important;
 }
 
 .dark-theme .menu__backdrop {
@@ -800,13 +797,6 @@ footer {
 
 .footer__social--link {
   color: #242424;
-}
-
-.footer__social--button {
-  background: transparent;
-  border: 0;
-  padding: 0;
-  font-weight: inherit;
 }
 
 /* Shapes */
