@@ -1,7 +1,6 @@
 let isModalOpen = false;
 let contrastToggle = false;
 let lastFocusedElement = null;
-const scaleFactor = 1 / 20;
 
 function openMenu() {
   document.body.classList.add("menu--open");
@@ -24,16 +23,154 @@ function closeMenu() {
   menu?.setAttribute("aria-hidden", "true");
 }
 
-function moveBackground(event) {
-  const shapes = document.querySelectorAll(".shape");
-  const x = event.clientX * scaleFactor;
-  const y = event.clientY * scaleFactor;
+function createBackgroundSymbols() {
+  const field = document.querySelector(".shape__field");
+  if (!field) return null;
 
-  for (let i = 0; i < shapes.length; i++) {
-    const isOdd = i % 2 !== 0;
-    const boolInt = isOdd ? -1 : 1;
-    shapes[i].style.transform = `translate(${x * boolInt}px, ${y * boolInt}px)`;
+  const symbols = [
+    "+",
+    "-",
+    "×",
+    "÷",
+    "=",
+    "≠",
+    "<",
+    ">",
+    "±",
+    "∞",
+    "π",
+    "∑",
+    "√",
+    "#",
+    "%",
+    "&",
+    "@",
+    "$",
+    "^",
+    "~",
+    "!",
+    "?",
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+  ];
+  const colors = [
+    "#a8d8ea",
+    "#f6b6c8",
+    "#b9e4c9",
+    "#f7d794",
+    "#c9b6e4",
+    "#f4a896",
+  ];
+  const columns = 24;
+  const rows = 20;
+  const placements = [];
+
+  for (let row = 0; row < rows; row++) {
+    for (let column = 0; column < columns; column++) {
+      const symbol = document.createElement("span");
+      symbol.className = "shape";
+      symbol.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+      symbol.style.left = `${((column + 0.5) / columns) * 100}%`;
+      symbol.style.top = `${((row + 0.5) / rows) * 100}%`;
+      symbol.style.setProperty(
+        "--symbol-color",
+        colors[Math.floor(Math.random() * colors.length)],
+      );
+      symbol.style.fontSize = `${18 + Math.floor(Math.random() * 22)}px`;
+      field.append(symbol);
+      placements.push({
+        element: symbol,
+        x: ((column + 0.5) / columns) * 100,
+        y: ((row + 0.5) / rows) * 100,
+      });
+    }
   }
+
+  return { field, placements };
+}
+
+const backgroundSymbols = createBackgroundSymbols();
+
+if (backgroundSymbols) {
+  const { field, placements } = backgroundSymbols;
+  const landing = document.querySelector("#landing-page");
+  let pointerX = 0;
+  let pointerY = 0;
+  let frameRequested = false;
+  let idleTimer = null;
+
+  function fadePointerWave() {
+    placements.forEach(({ element }) => element.classList.remove("shape--lit"));
+    idleTimer = null;
+  }
+
+  function scheduleIdleFade() {
+    clearTimeout(idleTimer);
+    idleTimer = setTimeout(fadePointerWave, 1000);
+  }
+
+  function revealPointerWave() {
+    frameRequested = false;
+    const bounds = field.getBoundingClientRect();
+    const radius = Math.min(150, bounds.width * 0.08);
+    const radiusSquared = radius * radius;
+
+    placements.forEach(({ element, x, y }) => {
+      const symbolX = (x / 100) * bounds.width;
+      const symbolY = (y / 100) * bounds.height;
+      const deltaX = symbolX - pointerX;
+      const deltaY = symbolY - pointerY;
+      element.classList.toggle(
+        "shape--lit",
+        deltaX * deltaX + deltaY * deltaY <= radiusSquared,
+      );
+    });
+  }
+
+  function updatePointerWave(event) {
+    const bounds = field.getBoundingClientRect();
+    pointerX = event.clientX - bounds.left;
+    pointerY = event.clientY - bounds.top;
+
+    if (!frameRequested) {
+      frameRequested = true;
+      requestAnimationFrame(revealPointerWave);
+    }
+
+    scheduleIdleFade();
+  }
+
+  landing?.addEventListener("pointermove", updatePointerWave);
+
+  landing?.addEventListener("pointerdown", (event) => {
+    if (event.pointerType === "touch") updatePointerWave(event);
+  });
+
+  landing?.addEventListener("pointerup", (event) => {
+    if (event.pointerType === "touch") scheduleIdleFade();
+  });
+
+  landing?.addEventListener("pointercancel", (event) => {
+    if (event.pointerType === "touch") scheduleIdleFade();
+  });
+
+  landing?.addEventListener("pointerleave", (event) => {
+    if (event.pointerType === "touch") {
+      scheduleIdleFade();
+      return;
+    }
+
+    clearTimeout(idleTimer);
+    fadePointerWave();
+  });
 }
 
 function toggleContrast() {
@@ -93,9 +230,20 @@ function toggleModal() {
   const currentScroll = window.scrollY;
 
   if (Math.abs(currentScroll - landingTop) > 5) {
-    window.scrollTo({ top: landingTop, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 }
+
+document.addEventListener("click", (e) => {
+  const modal = document.querySelector(".modal");
+  if (!isModalOpen) return;
+
+  if (modal.contains(e.target)) return;
+
+  if (e.target.closest("[onclick='toggleModal()']")) return;
+
+  toggleModal();
+});
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
@@ -190,6 +338,27 @@ const projects = [
 
 const projectList = document.querySelector("#project__list");
 const showMoreButton = document.querySelector("#more__btn");
+const scrollRevealObserver =
+  "IntersectionObserver" in window
+    ? new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.12 },
+      )
+    : null;
+
+if (scrollRevealObserver) {
+  document.body.classList.add("scroll-reveal-ready");
+  document
+    .querySelectorAll(".scroll-reveal-target")
+    .forEach((target) => scrollRevealObserver.observe(target));
+}
 
 console.log("projectList:", projectList);
 console.log("showMoreButton:", showMoreButton);
@@ -208,7 +377,7 @@ function renderProjects() {
       "beforeend",
       `
             <li class="project">
-                <div class="project__wrapper">
+                <div class="project__wrapper scroll-reveal-target">
                     <img
                         src="${project.image}"
                         alt="${project.imageAlt}"
@@ -256,6 +425,9 @@ function renderProjects() {
                 </div>
             </li>
             `,
+    );
+    scrollRevealObserver?.observe(
+      projectList.lastElementChild.querySelector(".project__wrapper"),
     );
   });
 

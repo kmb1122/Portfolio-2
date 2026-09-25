@@ -23,113 +23,49 @@
     </script>
   </head>
   <body>
-    <nav aria-label="Primary navigation">
-      <div class="nav__container">
-        <figure class="name__wrapper">
-          <img id="personal-logo" src="./P2assets/KB-logo.png" alt="KB logo" />
-          <p class="name">Kim Bowles</p>
-        </figure>
-        <ul class="nav__link--list">
-          <li class="nav__link">
-            <button
-              type="button"
-              class="nav__link--anchor nav__link--button nav__link--anchor link__hover-effect link__hover-effect--black"
-              onclick="toggleModal()"
-            >
-              About
-            </button>
-          </li>
-          <li class="nav__link">
-            <a
-              href="#skills"
-              class="nav__link--anchor link__hover-effect link__hover-effect--black"
-              >Skills</a
-            >
-          </li>
-          <li class="nav__link">
-            <a
-              href="#projects"
-              class="nav__link--anchor link__hover-effect link__hover-effect--black"
-              >Projects</a
-            >
-          </li>
-          <li class="nav__link">
-            <button
-              type="button"
-              class="nav__link--anchor nav__link--button nav__link--anchor link__hover-effect link__hover-effect--black"
-              onclick="toggleModal()"
-            >
-              Contact
-            </button>
-          </li>
-          <li class="nav__link">
-            <button
-              type="button"
-              class="nav__link--anchor nav__link--button"
-              onclick="toggleContrast()"
-              aria-label="Toggle color contrast"
-            >
-              <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
-            </button>
-          </li>
-        </ul>
-        <button
-          class="btn__menu click"
-          type="button"
-          onclick="openMenu()"
-          aria-label="Open menu"
-          aria-expanded="false"
-          aria-controls="mobile-menu"
-        >
-          <i class="fas fa-bars" aria-hidden="true"></i>
-        </button>
-        <div
-          class="menu__backdrop"
-          id="mobile-menu"
-          aria-label="Mobile navigation"
-          aria-hidden="true"
-        >
-          <button
-            class="btn__menu btn__menu--close"
-            type="button"
-            onclick="closeMenu()"
-            aria-label="Close menu"
-          >
-            <i
-              class="fa-solid fa-xmark menu__xmark click"
-              aria-hidden="true"
-            ></i>
-          </button>
-          <ul class="menu__links">
-            <li class="menu__link">
+    <section id="landing-page">
+      <nav aria-label="Primary navigation">
+        <div class="nav__container">
+          <figure class="name__wrapper">
+            <p class="name">Kim Bowles</p>
+          </figure>
+          <ul class="nav__link--list">
+            <li class="nav__link">
               <button
                 type="button"
-                class="menu__link--anchor menu__link--button menu__link--anchor link__hover-effect link__hover-effect--black"
+                class="nav__link--anchor nav__link--button nav__link--anchor link__hover-effect link__hover-effect--black"
                 onclick="toggleModal()"
               >
                 About
               </button>
             </li>
-            <li class="menu__link">
+            <li class="nav__link">
+              <a
+                href="#skills"
+                class="nav__link--anchor link__hover-effect link__hover-effect--black"
+                >Skills</a
+              >
+            </li>
+            <li class="nav__link">
               <a
                 href="#projects"
-                class="menu__link--anchor link__hover-effect link__hover-effect--black"
+                class="nav__link--anchor link__hover-effect link__hover-effect--black"
                 >Projects</a
               >
             </li>
-            <li class="menu__link">
+            <li class="nav__link">
               <button
                 type="button"
-                class="menu__link--anchor menu__link--button menu__link--anchor link__hover-effect link__hover-effect--black"
+                class="nav__link--anchor nav__link--button nav__link--anchor link__hover-effect link__hover-effect--black"
                 onclick="toggleModal()"
               >
                 Contact
               </button>
             </li>
-            <li class="menu__link">
+            <li class="nav__link">
               <button
                 type="button"
-                class="menu__link--anchor menu__link--button"
+                class="nav__link--anchor nav__link--button"
                 onclick="toggleContrast()"
                 aria-label="Toggle color contrast"
               >
@@ -140,10 +76,76 @@
               </button>
             </li>
           </ul>
+          <button
+            class="btn__menu click"
+            type="button"
+            onclick="openMenu()"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <i class="fas fa-bars" aria-hidden="true"></i>
+          </button>
+          <div
+            class="menu__backdrop"
+            id="mobile-menu"
+            aria-label="Mobile navigation"
+            aria-hidden="true"
+          >
+            <button
+              class="btn__menu btn__menu--close"
+              type="button"
+              onclick="closeMenu()"
+              aria-label="Close menu"
+            >
+              <i
+                class="fa-solid fa-xmark menu__xmark click"
+                aria-hidden="true"
+              ></i>
+            </button>
+            <ul class="menu__links">
+              <li class="menu__link">
+                <button
+                  type="button"
+                  class="menu__link--anchor menu__link--button menu__link--anchor link__hover-effect link__hover-effect--black"
+                  onclick="toggleModal()"
+                >
+                  About
+                </button>
+              </li>
+              <li class="menu__link">
+                <a
+                  href="#projects"
+                  class="menu__link--anchor link__hover-effect link__hover-effect--black"
+                  >Projects</a
+                >
+              </li>
+              <li class="menu__link">
+                <button
+                  type="button"
+                  class="menu__link--anchor menu__link--button menu__link--anchor link__hover-effect link__hover-effect--black"
+                  onclick="toggleModal()"
+                >
+                  Contact
+                </button>
+              </li>
+              <li class="menu__link">
+                <button
+                  type="button"
+                  class="menu__link--anchor menu__link--button"
+                  onclick="toggleContrast()"
+                  aria-label="Toggle color contrast"
+                >
+                  <i
+                    class="fa-solid fa-circle-half-stroke"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-    <section id="landing-page" onmousemove="moveBackground(event)">
+      </nav>
       <header class="header">
         <div class="header__content">
           <h1 class="title">Hi,</h1>
@@ -312,231 +314,225 @@
           </button>
         </div>
       </div>
-      <i class="fa-regular fa-moon shape shape__0" aria-hidden="true"></i>
-      <i class="fa-regular fa-circle shape shape__1" aria-hidden="true"></i>
-      <i class="fa-regular fa-square shape shape__2" aria-hidden="true"></i>
-      <i class="fa-regular fa-circle shape shape__3" aria-hidden="true"></i>
-      <i class="fa-solid fa-circle-nodes shape shape__4" aria-hidden="true"></i>
-      <i class="fa-regular fa-circle shape shape__5" aria-hidden="true"></i>
-      <i class="fa-regular fa-square shape shape__6" aria-hidden="true"></i>
-      <i class="fa-regular fa-circle shape shape__7" aria-hidden="true"></i>
-      <i class="fa-regular fa-moon shape shape__8" aria-hidden="true"></i>
+      <div class="shape__field" aria-hidden="true"></div>
     </section>
     <section id="skills">
       <div class="container">
         <div class="row">
-          <h1 class="section__title">Skills</h1>
-          <div class="skills__list">
-            <a
-              class="skill__link"
-              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                class="skill click"
-                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg"
-                alt="JavaScript"
-                title="JavaScript"
-              />
-              <p class="skill__name">JaveScript</p>
-            </a>
-            <a
-              class="skill__link"
-              href="https://www.typescriptlang.org/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                class="skill click"
-                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/typescript-colored.svg"
-                alt="TypeScript"
-                title="TypeScript"
-              />
-              <p class="skill__name">TypeScript</p>
-            </a>
-            <a
-              class="skill__link"
-              href="https://code.visualstudio.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                class="skill click"
-                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/visualstudiocode-colored.svg"
-                alt="VS Code"
-                title="VS Code"
-              />
-              <p class="skill__name">VS Code</p>
-            </a>
-            <a
-              class="skill__link"
-              href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                class="skill click"
-                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/html5-colored.svg"
-                alt="HTML5"
-                title="HTML5"
-              />
-              <p class="skill__name">HTML5</p>
-            </a>
-            <a
-              class="skill__link"
-              href="https://www.w3.org/TR/CSS/#css"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                class="skill click"
-                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/css3-colored.svg"
-                alt="CSS3"
-                title="CSS3"
-              />
-              <p class="skill__name">CSS3</p>
-            </a>
-            <a
-              class="skill__link"
-              href="https://tailwindcss.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                class="skill click"
-                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/tailwindcss-colored.svg"
-                alt="TailwindCSS"
-                title="TailwindCSS"
-              />
-              <p class="skill__name">TailwindCSS</p>
-            </a>
-            <a
-              class="skill__link"
-              href="https://reactjs.org/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                class="skill click"
-                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg"
-                alt="React"
-                title="React"
-              />
-              <p class="skill__name">React</p>
-            </a>
-            <a
-              class="skill__link"
-              href="https://nextjs.org/docs"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                class="skill click"
-                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nextjs-colored-dark.svg"
-                alt="NextJs"
-                title="NextJs"
-              />
-              <p class="skill__name">Next.js</p>
-            </a>
-            <a
-              class="skill__link"
-              href="https://vitejs.dev/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                class="skill click"
-                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/vite-colored.svg"
-                alt="Vite"
-                title="Vite"
-              />
-              <p class="skill__name">Vite</p>
-            </a>
-            <a
-              class="skill__link"
-              href="https://redux.js.org/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                class="skill click"
-                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/redux-colored.svg"
-                alt="Redux"
-                title="Redux"
-              />
-              <p class="skill__name">Redux</p>
-            </a>
-            <a
-              class="skill__link"
-              href="https://nodejs.org/en/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                class="skill click"
-                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg"
-                alt="NodeJS"
-                title="NodeJS"
-              />
-              <p class="skill__name">Node.js</p>
-            </a>
-            <a
-              class="skill__link"
-              href="https://firebase.google.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                class="skill click"
-                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/firebase-colored.svg"
-                alt="Firebase"
-                title="Firebase"
-              />
-              <p class="skill__name">Firebase</p>
-            </a>
-            <a
-              class="skill__link"
-              href="https://www.postgresql.org/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                class="skill click"
-                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/postgresql-colored.svg"
-                alt="PostgreSQL"
-                title="PostgreSQL"
-              />
-              <p class="skill__name">PostgreSQL</p>
-            </a>
-            <a
-              class="skill__link"
-              href="https://expressjs.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                class="skill click"
-                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/express-colored-dark.svg"
-                alt="Express"
-                title="Express"
-              />
-              <p class="skill__name">Express</p>
-            </a>
-            <a
-              class="skill__link"
-              href="https://www.figma.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                class="skill click"
-                src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/figma-colored.svg"
-                alt="Figma"
-                title="Figma"
-              />
-              <p class="skill__name">Figma</p>
-            </a>
+          <div class="skills__wrapper scroll-reveal-target">
+            <h1 class="section__title skills__title">Skills</h1>
+            <div class="skills__list">
+              <a
+                class="skill__link"
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  class="skill click"
+                  src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg"
+                  alt="JavaScript"
+                  title="JavaScript"
+                />
+                <p class="skill__name">JaveScript</p>
+              </a>
+              <a
+                class="skill__link"
+                href="https://www.typescriptlang.org/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  class="skill click"
+                  src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/typescript-colored.svg"
+                  alt="TypeScript"
+                  title="TypeScript"
+                />
+                <p class="skill__name">TypeScript</p>
+              </a>
+              <a
+                class="skill__link"
+                href="https://code.visualstudio.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  class="skill click"
+                  src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/visualstudiocode-colored.svg"
+                  alt="VS Code"
+                  title="VS Code"
+                />
+                <p class="skill__name">VS Code</p>
+              </a>
+              <a
+                class="skill__link"
+                href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  class="skill click"
+                  src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/html5-colored.svg"
+                  alt="HTML5"
+                  title="HTML5"
+                />
+                <p class="skill__name">HTML5</p>
+              </a>
+              <a
+                class="skill__link"
+                href="https://www.w3.org/TR/CSS/#css"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  class="skill click"
+                  src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/css3-colored.svg"
+                  alt="CSS3"
+                  title="CSS3"
+                />
+                <p class="skill__name">CSS3</p>
+              </a>
+              <a
+                class="skill__link"
+                href="https://tailwindcss.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  class="skill click"
+                  src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/tailwindcss-colored.svg"
+                  alt="TailwindCSS"
+                  title="TailwindCSS"
+                />
+                <p class="skill__name">TailwindCSS</p>
+              </a>
+              <a
+                class="skill__link"
+                href="https://reactjs.org/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  class="skill click"
+                  src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg"
+                  alt="React"
+                  title="React"
+                />
+                <p class="skill__name">React</p>
+              </a>
+              <a
+                class="skill__link"
+                href="https://nextjs.org/docs"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  class="skill click"
+                  src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nextjs-colored-dark.svg"
+                  alt="NextJs"
+                  title="NextJs"
+                />
+                <p class="skill__name">Next.js</p>
+              </a>
+              <a
+                class="skill__link"
+                href="https://vitejs.dev/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  class="skill click"
+                  src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/vite-colored.svg"
+                  alt="Vite"
+                  title="Vite"
+                />
+                <p class="skill__name">Vite</p>
+              </a>
+              <a
+                class="skill__link"
+                href="https://redux.js.org/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  class="skill click"
+                  src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/redux-colored.svg"
+                  alt="Redux"
+                  title="Redux"
+                />
+                <p class="skill__name">Redux</p>
+              </a>
+              <a
+                class="skill__link"
+                href="https://nodejs.org/en/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  class="skill click"
+                  src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg"
+                  alt="NodeJS"
+                  title="NodeJS"
+                />
+                <p class="skill__name">Node.js</p>
+              </a>
+              <a
+                class="skill__link"
+                href="https://firebase.google.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  class="skill click"
+                  src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/firebase-colored.svg"
+                  alt="Firebase"
+                  title="Firebase"
+                />
+                <p class="skill__name">Firebase</p>
+              </a>
+              <a
+                class="skill__link"
+                href="https://www.postgresql.org/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  class="skill click"
+                  src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/postgresql-colored.svg"
+                  alt="PostgreSQL"
+                  title="PostgreSQL"
+                />
+                <p class="skill__name">PostgreSQL</p>
+              </a>
+              <a
+                class="skill__link"
+                href="https://expressjs.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  class="skill click"
+                  src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/express-colored-dark.svg"
+                  alt="Express"
+                  title="Express"
+                />
+                <p class="skill__name">Express</p>
+              </a>
+              <a
+                class="skill__link"
+                href="https://www.figma.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  class="skill click"
+                  src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/figma-colored.svg"
+                  alt="Figma"
+                  title="Figma"
+                />
+                <p class="skill__name">Figma</p>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -548,14 +544,18 @@
             <span class="teal title__thin">Featured Work</span> Projects
           </h1>
           <ul id="project__list" class="project__list"></ul>
-          <button id="more__btn" class="more__btn click" type="button">
+          <button
+            id="more__btn"
+            class="more__btn click scroll-reveal-target"
+            type="button"
+          >
             View More
           </button>
         </div>
       </div>
     </section>
     <footer>
-      <div class="row footer__row">
+      <div class="row footer__row scroll-reveal-target">
         <div class="footer__wrap">
           <figure>
             <img
@@ -585,7 +585,7 @@
           </a>
           <button
             type="button"
-            class="footer__social--link footer__social--button link__hover-effect link__hover-effect--black"
+            class="footer__social--link link__hover-effect link__hover-effect--black footer__link--btn"
             onclick="toggleModal()"
           >
             Contact
